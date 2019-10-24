@@ -28,10 +28,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     public void onBindViewHolder(@NonNull final OrderViewHolder holder, final int position) {
 
-        final Menu menuAtPosition = orders.get(position);
+        final Menu orderAtPosition = orders.get(position);
 
-        holder.ordername.setText(menuAtPosition.getFname());
-        String itemMenuOrderQuantityString = Integer.toString(menuAtPosition.getQuantity());
+        holder.ordername.setText(orderAtPosition.getFname());
+        String itemMenuOrderQuantityString = Integer.toString(orderAtPosition.getQuantity());
         holder.orderquantity.setText(itemMenuOrderQuantityString);
 
     }
@@ -40,6 +40,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         return orders.size();
     }
 
+    public static int total = 0;
+
+    public int getTotal() {
+        for (int i = 0; i < orders.size(); i++) {
+            Menu order = orders.get(i);
+            total += (order.getQuantity() * Integer.parseInt(order.getPrice()));
+        }
+        return total;
+    }
 
 
     public static class OrderViewHolder extends RecyclerView.ViewHolder {

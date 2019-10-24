@@ -3,9 +3,13 @@ package com.example.h2a2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +36,11 @@ public class Order extends AppCompatActivity {
         orderAdapter.setData(orders);
         recyclerView.setAdapter(orderAdapter);
 
+        TextView totalText = findViewById(R.id.totalView);
+        String totals = "Total: $" + String.valueOf(orderAdapter.getTotal());
+        totalText.setText(totals);
+
 
     }
+
 }

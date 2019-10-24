@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(menuAdapter);
 
         Intent intent1 = getIntent();
+
         int menuID = intent1.getIntExtra("MenuID", 0);
         if (menuID != 0) {
             Menu menuEntry = new Menu(menuID);

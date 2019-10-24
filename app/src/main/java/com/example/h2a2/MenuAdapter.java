@@ -39,7 +39,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
         holder.menuTextView.setText(menuAtPosition.getFname());
         holder.priceTextView.setText("$" + menuAtPosition.getPrice());
-        holder.descriptionTextView.setText(menuAtPosition.getDescription());
 
 
         holder.view.setOnClickListener(new View.OnClickListener() {
@@ -64,14 +63,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         public View view;
         public TextView menuTextView;
         public TextView priceTextView;
-        public TextView descriptionTextView;
 
         public MenuViewHolder(View v) {
             super(v);
             view = v;
             menuTextView = v.findViewById(R.id.name);
             priceTextView = v.findViewById(R.id.price);
-            descriptionTextView = v.findViewById(R.id.description);
         }
     }
 }

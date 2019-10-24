@@ -14,6 +14,7 @@ public class MenuDetailActivity extends AppCompatActivity {
     private TextView dpriceTextView;
     private TextView ddescriptionTextView;
     private TextView aquantity;
+    private int menuID;
     private int quantity = 0;
     double total = 0;
 
@@ -24,7 +25,7 @@ public class MenuDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        final int menuID = intent.getIntExtra("MenuID", 0);
+        menuID = intent.getIntExtra("MenuID", 0);
 
         Menu menu = FakeDatabase.getMenuByID(menuID);
 
