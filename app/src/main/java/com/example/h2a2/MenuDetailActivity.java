@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class MenuDetailActivity extends AppCompatActivity {
     private TextView aquantity;
     private int menuID;
     private int quantity = 0;
+    ImageView foodphoto;
     double total = 0;
 
     @Override
@@ -33,10 +35,12 @@ public class MenuDetailActivity extends AppCompatActivity {
         dpriceTextView = findViewById(R.id.detailprice);
         ddescriptionTextView = findViewById(R.id.detaildescription);
         aquantity = findViewById(R.id.quantityv);
+        foodphoto = findViewById(R.id.foodphotoview);
 
         dmenuTextView.setText(menu.getFname());
         dpriceTextView.setText("$" + menu.getPrice());
         ddescriptionTextView.setText(menu.getDescription());
+        foodphoto.setImageResource(menu.getImage());
 
         Button add = findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
@@ -70,5 +74,6 @@ public class MenuDetailActivity extends AppCompatActivity {
                 }
         });
     }
+
 
 }

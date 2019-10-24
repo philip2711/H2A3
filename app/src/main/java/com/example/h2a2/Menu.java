@@ -9,15 +9,18 @@ public class Menu implements Serializable {
     private String fname;
     private String description;
     private int quantity;
+    private int image;
 
 
 
-    public Menu(int menuID, String price, String fname, String description, int quantity) {
+
+    public Menu(int menuID, String price, String fname, String description, int quantity, int image) {
         this.menuID = menuID;
         this.price = price;
         this.fname = fname;
         this.description = description;
         this.quantity = quantity;
+        this.image = image;
 
     }
 
@@ -64,4 +67,9 @@ public class Menu implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public int getImage() { return image; }
+
+    public void setImage(int image) { this.image = image; }
+
 }

@@ -87,4 +87,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailprice" />
 
+    <ImageView
+        android:id="@+id/foodphotoview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/addtocart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/less"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
