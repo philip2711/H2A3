@@ -42,26 +42,6 @@ public class MenuDetailActivity extends AppCompatActivity {
         ddescriptionTextView.setText(menu.getDescription());
         foodphoto.setImageResource(menu.getImage());
 
-        Button add = findViewById(R.id.add);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                quantity += 1;
-                String quantityordered = Integer.toString(quantity);
-                aquantity.setText(quantityordered);
-            }
-        });
-
-        Button less = findViewById(R.id.less);
-        less.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                quantity -= 1;
-                String quantityordered = Integer.toString(quantity);
-                aquantity.setText(quantityordered);
-            }
-        });
-
         Button addButton = findViewById(R.id.addtocart);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +55,13 @@ public class MenuDetailActivity extends AppCompatActivity {
         });
     }
 
-
+public void onadd(View view){
+    quantity += 1;
+    aquantity.setText(String.valueOf(quantity));
+}
+    public void onless(View view){
+        quantity -= 1;
+        aquantity.setText(String.valueOf(quantity));
+    }
 
 }
