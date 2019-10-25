@@ -31,8 +31,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         final Menu orderAtPosition = orders.get(position);
 
         holder.ordername.setText(orderAtPosition.getFname());
-        String itemMenuOrderQuantityString = Integer.toString(orderAtPosition.getQuantity());
-        holder.orderquantity.setText(itemMenuOrderQuantityString);
+        holder.orderquantity.setText("x" + String.valueOf(orderAtPosition.getQuantity()));
+        holder.orderprice.setText("$" + orderAtPosition.getPrice());
+        String ordertotal = String.valueOf(orderAtPosition.getQuantity() * Integer.parseInt(orderAtPosition.getPrice()));
+        holder.ordertotaldisplay.setText("Altogether: $" + ordertotal);
 
     }
 
@@ -55,12 +57,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         public View view;
         public TextView ordername;
         public TextView orderquantity;
+        public TextView orderprice;
+        public TextView ordertotaldisplay;
 
         public OrderViewHolder(View v) {
             super(v);
             view = v;
             ordername = v.findViewById(R.id.ordernamedisplay);
             orderquantity = v.findViewById(R.id.orderquantitydisplay);
+            orderprice = v.findViewById(R.id.orderpriceview);
+            ordertotaldisplay = v.findViewById(R.id.ordertotaldisplay);
         }
     }
 }
